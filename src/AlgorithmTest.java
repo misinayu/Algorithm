@@ -1,5 +1,6 @@
-import java.awt.font.NumericShaper.Range;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class AlgorithmTest {
 
@@ -10,7 +11,22 @@ public class AlgorithmTest {
 		//SmallLargeEqual();
 		//Range();
 		//SortingThreeNumbers();
-		CircleInARectangle();
+		//CircleInARectangle();
+		PrintTestCases();
+	}
+	
+	public static void PrintTestCases() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Integer> cases = new ArrayList<Integer>();
+		int input;
+		do {
+			input = scanner.nextInt();
+			cases.add(input);
+		} while (input != 0);
+		
+		for(int i = 0; i < cases.size(); ++i){
+			System.out.println("Case " + (i+1) + ": " + cases.get(i));
+		}
 	}
 	
 	public static void CircleInARectangle() {
