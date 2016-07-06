@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 
@@ -12,7 +14,39 @@ public class AlgorithmTest {
 		//Range();
 		//SortingThreeNumbers();
 		//CircleInARectangle();
-		PrintTestCases();
+		//PrintTestCases();
+		SwappingTwoNumbers();
+	}
+	
+	public static void SwappingTwoNumbers() {
+		Scanner scanner = new Scanner(System.in);
+		
+		//数字を保存する配列宣言
+		LinkedList<Integer> pairNum = new LinkedList<Integer>();
+		
+		//ループで数字を入力
+		int x;
+		int y;
+		do {
+			x = scanner.nextInt();
+			y = scanner.nextInt();
+			pairNum.add(x);
+			pairNum.add(y);
+		} while ((x != 0) || (y != 0));
+		
+		//ループで2つずつ数字を取り出して、比べて出力する
+		while(!pairNum.isEmpty()){
+			x = pairNum.poll();
+			y = pairNum.poll();
+			if ((x == 0) && (y == 0)) {
+				break;
+			}
+			if(x > y){
+				System.out.println(y + " " + x);
+			}else{
+				System.out.println(x + " " + y);
+			}
+		}
 	}
 	
 	public static void PrintTestCases() {
