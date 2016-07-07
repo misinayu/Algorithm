@@ -15,7 +15,25 @@ public class AlgorithmTest {
 		//SortingThreeNumbers();
 		//CircleInARectangle();
 		//PrintTestCases();
-		SwappingTwoNumbers();
+		//SwappingTwoNumbers();
+		HowManyDivisors();
+	}
+	
+	public static void HowManyDivisors() {
+		Scanner scanner = new Scanner(System.in);
+		//数字を入力する
+		int a = scanner.nextInt();
+		int b = scanner.nextInt();
+		int c = scanner.nextInt();
+		//aからｂまでループして、cを割って残りが０ならカウントする
+		int count = 0;
+		for(int i = a; i <= b; ++i){
+			if ((c % i) == 0) {
+				count++;
+			}
+		}
+		//カウントを出力する
+		System.out.println(count);
 	}
 	
 	public static void SwappingTwoNumbers() {
