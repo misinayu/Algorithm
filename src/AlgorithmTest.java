@@ -16,7 +16,23 @@ public class AlgorithmTest {
 		//CircleInARectangle();
 		//PrintTestCases();
 		//SwappingTwoNumbers();
-		HowManyDivisors();
+		//HowManyDivisors();
+		ABProblem();
+	}
+	
+	public static void ABProblem() {
+		Scanner scanner = new Scanner(System.in);
+		//数字を入力する
+		int a = scanner.nextInt();
+		int b = scanner.nextInt();
+		
+		//数字を計算して出力する
+		int d = a / b;
+		int r = a % b;
+		double f = (double)a / (double)b;
+		
+		System.out.print(d + " " + r + " ");
+		System.out.printf("%.6f", f);
 	}
 	
 	public static void HowManyDivisors() {
