@@ -17,7 +17,24 @@ public class AlgorithmTest {
 		//PrintTestCases();
 		//SwappingTwoNumbers();
 		//HowManyDivisors();
-		ABProblem();
+		//ABProblem();
+		Circle();
+	}
+	
+	public static void Circle() {
+		Scanner scanner = new Scanner(System.in);
+		
+		//円の半径rを入力する
+		int r = scanner.nextInt();
+		
+		//円の面積＝半径×半径×3.14
+		double men = r * r * Math.PI;
+		
+		//円の円周の長さ＝2×半径×3.14
+		double syu = 2 * r * Math.PI;
+		
+		//面積と円周の長さを出力
+		System.out.println(men + " " + syu);
 	}
 	
 	public static void ABProblem() {
