@@ -18,7 +18,53 @@ public class AlgorithmTest {
 		//SwappingTwoNumbers();
 		//HowManyDivisors();
 		//ABProblem();
-		Circle();
+		//Circle();
+		SimpleCalculator();
+	}
+	
+	public static void SimpleCalculator() {
+		Scanner scanner = new Scanner(System.in);
+		
+		int a = 0;
+		String op = "";
+		int b = 0;
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		
+		//計算式を入力する
+		//演算子が?じゃないかチェック
+		//?だったら終了、?じゃなかったら計算
+		while(!op.equals("?")){
+			try {
+				a = scanner.nextInt();
+				op = scanner.next();
+				b = scanner.nextInt();
+				scanner.nextLine();
+			} catch (java.util.InputMismatchException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			
+			switch (op) {
+			case "+":
+				result.add(a + b);
+				break;
+			case "-":
+				result.add(a - b);
+				break;
+			case "*":
+				result.add(a * b);
+				break;
+			case "/":
+				result.add(a / b);
+				break;
+			default:
+				break;
+			}
+		}
+		//計算結果を出力する
+		for(int r : result){
+			System.out.println(r);
+		}
 	}
 	
 	public static void Circle() {
