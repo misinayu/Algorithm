@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -19,7 +20,28 @@ public class AlgorithmTest {
 		//HowManyDivisors();
 		//ABProblem();
 		//Circle();
-		SimpleCalculator();
+		//SimpleCalculator();
+		MinMaxAndSum();
+	}
+	
+	public static void MinMaxAndSum() {
+		Scanner scanner = new Scanner(System.in);
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		//配列の数を入力
+		int arrayNum = scanner.nextInt();
+		int sum = 0;
+		//配列の数だけ数字を入力
+		for(int i = 0; i < arrayNum; i++){
+			list.add(scanner.nextInt());
+		}
+		//配列をソートする
+		Collections.sort(list);
+		//合計を計算する
+		for(int i : list){
+			sum += i;
+		}
+		//最小値、最大値、合計値を出力
+		System.out.println(list.pollFirst() + " " + list.pollLast() + " " + sum);
 	}
 	
 	public static void SimpleCalculator() {
