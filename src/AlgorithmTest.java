@@ -21,7 +21,31 @@ public class AlgorithmTest {
 		//ABProblem();
 		//Circle();
 		//SimpleCalculator();
-		MinMaxAndSum();
+		//MinMaxAndSum();
+		PrintAPectangle();
+	}
+	
+	public static void PrintAPectangle() {
+		Scanner scanner = new Scanner(System.in);
+		//H,Wどっちも0が入力されるまで、ループで長方形のH,Wを入力
+		ArrayList<Integer> array = new ArrayList<Integer>();
+		int H = 1,W = 1;
+		while ((H != 0) || (W != 0)) {
+			H = scanner.nextInt();
+			W = scanner.nextInt();
+			array.add(H);
+			array.add(W);
+		}
+		//ループで#を出力する
+		for(int i = 0; i < array.size(); i+=2){
+			for(int j = 0; j < array.get(i); j++){
+				for(int k = 0; k < array.get(i+1); k++){
+					System.out.print("#");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void MinMaxAndSum() {
