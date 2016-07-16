@@ -23,7 +23,34 @@ public class AlgorithmTest {
 		//SimpleCalculator();
 		//MinMaxAndSum();
 		//PrintAPectangle();
-		PrintAFrame();
+		//PrintAFrame();
+		PrintAChessboard();
+	}
+	
+	public static void PrintAChessboard() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Point> aList = new ArrayList<Point>();
+		//H,Wに0,0が入力されるまでH,Wを入力
+		int H = 1, W = 1;
+		while ((H != 0) || (W != 0)) {
+			H = scanner.nextInt();
+			W = scanner.nextInt();
+			aList.add(new Point(H, W));
+		}
+		//ループで奇数なら#、偶数なら.を出力
+		for (Point p : aList) {
+			for(int i = 0; i < p.x; i++){
+				for(int j = 0; j < p.y; j++){
+					if (((i+j) % 2) == 0) {
+						System.out.print("#");
+					}else {
+						System.out.print(".");
+					}
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void PrintAFrame() {
