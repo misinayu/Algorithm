@@ -24,7 +24,20 @@ public class AlgorithmTest {
 		//MinMaxAndSum();
 		//PrintAPectangle();
 		//PrintAFrame();
-		PrintAChessboard();
+		//PrintAChessboard();
+		StructuredProgramming();
+	}
+	
+	public static void StructuredProgramming() {
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		for(int i = 1; i <= n; i++){
+			if ((i % 3) == 0) {
+				System.out.print(" " + i);
+			}else if ((i % 10) == 3) {
+				System.out.print(" " + i);
+			}
+		}
 	}
 	
 	public static void PrintAChessboard() {
