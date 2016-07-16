@@ -22,7 +22,35 @@ public class AlgorithmTest {
 		//Circle();
 		//SimpleCalculator();
 		//MinMaxAndSum();
-		PrintAPectangle();
+		//PrintAPectangle();
+		PrintAFrame();
+	}
+	
+	public static void PrintAFrame() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Point> aList = new ArrayList<Point>();
+		//H,Wに0,0が入力されるまでH,Wを入力
+		int H = 1, W = 1;
+		while ((H != 0) || (W != 0)) {
+			H = scanner.nextInt();
+			W = scanner.nextInt();
+			aList.add(new Point(H, W));
+		}
+		//ループで四角の端を#で中を.で出力
+		for (Point p : aList) {
+			for(int i = 0; i < p.x; i++){
+				for(int j = 0; j < p.y; j++){
+					if ((i == 0) || (i == p.x-1)||
+							(j == 0) || (j == p.y-1)) {
+						System.out.print("#");
+					}else {
+						System.out.print(".");
+					}
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void PrintAPectangle() {
