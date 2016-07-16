@@ -25,7 +25,31 @@ public class AlgorithmTest {
 		//PrintAPectangle();
 		//PrintAFrame();
 		//PrintAChessboard();
-		StructuredProgramming();
+		//StructuredProgramming();
+		ReversingNumbers();
+	}
+	
+	public static void ReversingNumbers() {
+		Scanner scanner = new Scanner(System.in);
+		//配列を作る
+		int n = scanner.nextInt();
+		int[] array = new int[n];
+		for(int i = 0; i < n; i++){
+			array[i] = scanner.nextInt(); 
+		}
+		//配列の中身を入れ替える
+		for (int i = 0; i < array.length / 2; i++) {
+			int temp = array[i];
+			array[i] = array[array.length-(i+1)];
+			array[array.length-(i+1)] = temp;
+		}
+		//配列を出力する
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i]);
+			if(i < array.length-1){
+				System.out.print(" ");
+			}
+		}
 	}
 	
 	public static void StructuredProgramming() {
