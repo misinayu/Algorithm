@@ -27,7 +27,34 @@ public class AlgorithmTest {
 		//PrintAChessboard();
 		//StructuredProgramming();
 		//ReversingNumbers();
-		FindingMissingCards();
+		//FindingMissingCards();
+		OfficialHouse();
+	}
+	
+	public static void OfficialHouse() {
+		Scanner scanner = new Scanner(System.in);
+		//[棟][階][部屋]の配列を作成する
+		int[][][] rooms = new int[4][3][10];
+		//部屋の入居者の情報を入力
+		int n = scanner.nextInt();
+		for (int i = 0; i < n; i++) {
+			int building = scanner.nextInt();
+			int floor = scanner.nextInt();
+			int room = scanner.nextInt();
+			rooms[building-1][floor-1][room-1] = scanner.nextInt();
+		}
+		//部屋の入居状況を出力する
+		for (int i = 0; i < rooms.length; i++) {
+			for (int j = 0; j < rooms[i].length; j++) {
+				for (int k = 0; k < rooms[i][j].length; k++) {
+					System.out.print(rooms[i][j][k] + " ");
+				}
+				System.out.println();
+			}
+			if (i < rooms.length-1) {
+				System.out.println("####################");
+			}
+		}
 	}
 	
 	public static void FindingMissingCards() {
