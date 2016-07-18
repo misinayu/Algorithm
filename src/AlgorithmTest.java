@@ -26,7 +26,36 @@ public class AlgorithmTest {
 		//PrintAFrame();
 		//PrintAChessboard();
 		//StructuredProgramming();
-		ReversingNumbers();
+		//ReversingNumbers();
+		FindingMissingCards();
+	}
+	
+	public static void FindingMissingCards() {
+		Scanner scanner = new Scanner(System.in);
+		//入力された数だけのカードを作る
+		int n = scanner.nextInt();
+		ArrayList<Card> myCard = new ArrayList<Card>();
+		for(int i = 0; i < n; i++){
+			String mark = scanner.next();
+			int number = scanner.nextInt();
+			scanner.nextLine();
+			myCard.add(new Card(mark, number));
+		}
+		//Cardのマークを保存してる配列
+		String[] mark = { "S", "H", "C", "D" };
+		//持っているカードをチェックして、無いカードを出力
+		for (Card c : myCard) {
+			//マークのループ
+			for (int i = 0; i < 4; i++) {
+				//数字のループ
+				for (int j = 1; j <= 13; j++) {
+					Card card = new Card(mark[i], j);
+					if (!myCard.contains(card)) {
+						System.out.println(card.toString());
+					}
+				}
+			}
+		}
 	}
 	
 	public static void ReversingNumbers() {
