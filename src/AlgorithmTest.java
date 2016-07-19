@@ -28,7 +28,40 @@ public class AlgorithmTest {
 		//StructuredProgramming();
 		//ReversingNumbers();
 		//FindingMissingCards();
-		OfficialHouse();
+		//OfficialHouse();
+		MatrixVectorMultiplication();
+	}
+	
+	public static void MatrixVectorMultiplication() {
+		Scanner scanner = new Scanner(System.in);
+		// n, mを入力
+		int n = scanner.nextInt();
+		int m = scanner.nextInt();
+		int[][] aMatrix = new int[n][m];
+		int[] bMatrix = new int[m];
+		
+		// n x mの配列を入力
+		for (int i = 0; i < aMatrix.length; i++) {
+			for (int j = 0; j < aMatrix[i].length; j++) {
+				aMatrix[i][j] = scanner.nextInt();
+			}
+		}
+		
+		// m x 1の配列を入力
+		for (int i = 0; i < bMatrix.length; i++) {
+			bMatrix[i] = scanner.nextInt();
+		}
+		
+		// 計算結果を出力
+		int[] sum = new int[n];
+		for (int i = 0; i < aMatrix.length; i++) {
+			for (int j = 0; j < aMatrix[i].length; j++) {
+				sum[i] += aMatrix[i][j] * bMatrix[j];
+			}
+		}
+		for (int i : sum) {
+			System.out.println(i);
+		}
 	}
 	
 	public static void OfficialHouse() {
