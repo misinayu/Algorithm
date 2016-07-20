@@ -29,7 +29,52 @@ public class AlgorithmTest {
 		//ReversingNumbers();
 		//FindingMissingCards();
 		//OfficialHouse();
-		MatrixVectorMultiplication();
+		//MatrixVectorMultiplication();
+		Grading();
+	}
+	
+	public static void Grading() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+		
+		while (true) {
+			int m = scanner.nextInt();
+			int f = scanner.nextInt();
+			int r = scanner.nextInt();
+			
+			if ((m == -1) && (f == -1) && (r == -1)) {
+				break;
+			}
+			
+			grades.add(m);
+			grades.add(f);
+			grades.add(r);
+		}
+		
+		while (!grades.isEmpty()) {
+			int sum = grades.get(0) + grades.get(1);
+			if ((grades.get(0) == -1) || (grades.get(1) == -1)) {
+				System.out.println("F");
+			}else if (sum >= 80) {
+				System.out.println("A");
+			}else if ((sum >= 65) && (sum < 80)) {
+				System.out.println("B");
+			}else if ((sum >= 50) && (sum < 65)) {
+				System.out.println("C");
+			}else if ((sum >= 30) && (sum < 50)) {
+				if (grades.get(2) >= 50) {
+					System.out.println("C");
+				}else {
+					System.out.println("D");
+				}
+			}else if (sum < 30) {
+				System.out.println("F");
+			}
+			
+			for (int i = 0; i < 3; i++) {
+				grades.remove(0);
+			}
+		}
 	}
 	
 	public static void MatrixVectorMultiplication() {
