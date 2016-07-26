@@ -33,7 +33,54 @@ public class AlgorithmTest {
 		//OfficialHouse();
 		//MatrixVectorMultiplication();
 		//Grading();
-		HowManyWays();
+		//HowManyWays();
+		Spreadsheet();
+	}
+	
+	public static void Spreadsheet() {
+		Scanner scanner = new Scanner(System.in);
+		//表の大きさを入力
+		int r = scanner.nextInt();
+		int c = scanner.nextInt();
+		
+		//表の中身を入力
+		int[][] array = new int[r+1][c+1];
+		for(int i = 0; i < r; i++){
+			for(int j = 0; j < c; j++){
+				array[i][j] = scanner.nextInt();
+			}
+		}
+		
+		//表の行を計算
+		for(int i = 0; i < r; i++){
+			int sum = 0;
+			for(int j = 0; j < c; j++){
+				sum += array[i][j];
+			}
+			array[i][c] = sum;
+		}
+		
+		//表の行を計算
+		for(int i = 0; i < c; i++){
+			int sum = 0;
+			for(int j = 0; j < r; j++){
+				sum += array[j][i];
+			}
+			array[r][i] = sum;
+		}
+		
+		//すべての合計を計算
+		for(int i = 0; i < r; i++){
+			array[r][c] += array[i][c];
+		}
+		
+		//表の中身を出力
+		for(int i = 0; i < array.length; i++){
+			for(int j = 0; j < array[i].length; j++){
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void HowManyWays(){
