@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import org.omg.PortableServer.POA;
+
 
 public class AlgorithmTest {
 
@@ -30,7 +32,34 @@ public class AlgorithmTest {
 		//FindingMissingCards();
 		//OfficialHouse();
 		//MatrixVectorMultiplication();
-		Grading();
+		//Grading();
+		HowManyWays();
+	}
+	
+	public static void HowManyWays(){
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Point> list = new ArrayList<Point>();
+		while(true){
+			int n = scanner.nextInt();
+			int x = scanner.nextInt();
+			if((n == 0) && (x == 0)){
+				break;
+			}
+			list.add(new Point(n, x));
+		}
+		for(Point p : list){
+			int count = 0;
+			for(int i = 1; i <= p.x; i++){
+				for(int j = i+1; j <= p.x; j++){
+					for(int k = j+1; k <= p.x; k++){
+						if(p.y == (i+j+k)){
+							count++;
+						}
+					}
+				}
+			}
+			System.out.println(count);
+		}
 	}
 	
 	public static void Grading() {
