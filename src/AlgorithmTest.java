@@ -35,7 +35,29 @@ public class AlgorithmTest {
 		//Grading();
 		//HowManyWays();
 		//Spreadsheet();
-		MatrixMultiplication();
+		//MatrixMultiplication();
+		TogglingCases();
+	}
+	
+	public static void TogglingCases() {
+		Scanner scanner = new Scanner(System.in);
+		//文字列を入力
+		String str = new String();
+		str = scanner.nextLine();
+		char[] charArray = str.toCharArray();
+		
+		//大文字を小文字に、小文字を大文字に
+		for (int i = 0; i < charArray.length; i++) {
+			if(Character.isUpperCase(charArray[i])){
+				charArray[i] = Character.toLowerCase(charArray[i]);
+			}else {
+				charArray[i] = Character.toUpperCase(charArray[i]);
+			}
+		}
+		
+		//文字列を出力
+		String strResult = String.valueOf(charArray);
+		System.out.println(strResult);
 	}
 	
 	public static void MatrixMultiplication() {
