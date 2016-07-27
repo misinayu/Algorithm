@@ -34,7 +34,49 @@ public class AlgorithmTest {
 		//MatrixVectorMultiplication();
 		//Grading();
 		//HowManyWays();
-		Spreadsheet();
+		//Spreadsheet();
+		MatrixMultiplication();
+	}
+	
+	public static void MatrixMultiplication() {
+		Scanner scanner = new Scanner(System.in);
+		//配列A(n x m), 配列B(m x l)の大きさを入力
+		int n = scanner.nextInt();
+		int m = scanner.nextInt();
+		int l = scanner.nextInt();
+		
+		int[][] arrayA = new int[n][m];
+		int[][] arrayB = new int[m][l];
+		int[][] arrayResult = new int[n][l];
+		
+		//配列A, 配列Bのの中身を入力
+		for (int i = 0; i < arrayA.length; i++) {
+			for (int j = 0; j < arrayA[i].length; j++) {
+				arrayA[i][j] = scanner.nextInt();
+			}
+		}
+		for (int i = 0; i < arrayB.length; i++) {
+			for (int j = 0; j < arrayB[i].length; j++) {
+				arrayB[i][j] = scanner.nextInt();
+			}
+		}
+		
+		//配列A x 配列Bを計算
+		for (int i = 0; i < arrayResult.length; i++) {
+			for (int j = 0; j < arrayResult[i].length; j++) {
+				for (int k = 0; k < m; k++) {
+					arrayResult[i][j] += arrayA[i][k] * arrayB[k][j];
+				} 
+			}
+		}
+		
+		//計算結果の配列を出力する
+		for (int i = 0; i < arrayResult.length; i++) {
+			for (int j = 0; j < arrayResult[i].length; j++) {
+				System.out.print(arrayResult[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void Spreadsheet() {
