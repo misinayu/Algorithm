@@ -36,7 +36,31 @@ public class AlgorithmTest {
 		//HowManyWays();
 		//Spreadsheet();
 		//MatrixMultiplication();
-		TogglingCases();
+		//TogglingCases();
+		SumOfNumbers();
+	}
+	
+	public static void SumOfNumbers() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		//0が入力されるまで数字を入力
+		while(true){
+			System.out.println("Please input number(under 10000)>>>");
+			int n = scanner.nextInt();
+			if(n == 0){ break; }
+			if(n / 10000 != 0){ break; }
+			
+			list.add(n);
+		}
+		
+		for (int i : list) {
+			int thousand = i / 1000;
+			int hundred = (i % 1000) / 100;
+			int ten = ((i % 1000) % 100) / 10;
+			int one = ((i % 1000) % 100) % 10;
+			int sum = thousand + hundred + ten + one;
+			System.out.println(sum);
+		}
 	}
 	
 	public static void TogglingCases() {
