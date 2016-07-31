@@ -37,7 +37,71 @@ public class AlgorithmTest {
 		//Spreadsheet();
 		//MatrixMultiplication();
 		//TogglingCases();
-		SumOfNumbers();
+		//SumOfNumbers();
+		//CountingCharacters();
+		Ring();
+	}
+	
+	public static void Ring() {
+		Scanner scanner = new Scanner(System.in);
+		boolean result = false;
+		String strS = scanner.nextLine();
+		String strP = scanner.nextLine();
+		
+		//回転しないで文字列Sの中に文字列Pが入っているか検査
+		if(strS.contains(strP)){
+			System.out.println("YES");
+			return;
+		}
+		
+		//文字列Sが回転した状態で文字列Pが入っているか検査
+		for (int i = 0; i < strS.length(); i++) {
+			if(result){ break; } //trueなら入っているので、もう検査しなくて良い
+			
+			if(strS.charAt(i) == strP.charAt(0)){
+				int k = i; //文字列Sの検査を始める最初のとこ
+				for (int j = 0; j < strP.length(); j++) {
+					if(k >= strS.length()){
+						k = 0;
+					}
+					
+					if(strS.charAt(k) != strP.charAt(j)){
+						break;
+					}
+					
+					if(j == strP.length()-1){
+						result = true;
+					}
+					
+					k++;
+				}
+			}
+		}
+		
+		//結果を出力
+		if(result){
+			System.out.println("YES");
+		}else{
+			System.out.println("No");
+		}
+	}
+	
+	public static void CountingCharacters() {
+		Scanner scanner = new Scanner(System.in);
+		String str = scanner.nextLine();
+		int[] count = new int[26];
+		//文字の数を計算
+		for (int i = 0; i < str.length(); i++) {
+			char n = str.charAt(i);
+			n = Character.toLowerCase(n);
+			if(n != ' '){
+				count[n - 97]+=1;
+			}
+		}
+		//文字の数を出力
+		for (int i = 0; i < count.length; i++) {
+			System.out.println(('a'+i) + " : " + count[i]);
+		}
 	}
 	
 	public static void SumOfNumbers() {
