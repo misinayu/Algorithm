@@ -39,7 +39,48 @@ public class AlgorithmTest {
 		//TogglingCases();
 		//SumOfNumbers();
 		//CountingCharacters();
-		Ring();
+		//Ring();
+		FindingAWord();
+	}
+	
+	public static void FindingAWord() {
+		Scanner scanner = new Scanner(System.in);
+		String strT = new String();
+		String strEND = "END_OF_TEXT";
+		int count = 0;
+		
+		String strW = scanner.next();
+		scanner.nextLine();
+		
+		while(true){
+			String input = scanner.nextLine();
+			if(input.equals(strEND)){ break; }
+			strT += input;
+		}
+		
+		if(!strT.contains(strW)){
+			System.out.println(count);
+			return;
+		}
+		
+		for (int i = 0; i < strT.length(); i++) {
+			if(strT.charAt(i) == strW.charAt(0)){
+				int k = i;
+				for (int j = 0; j < strW.length(); j++) {
+					if(strT.charAt(k) != strW.charAt(j)){
+						break;
+					}
+					
+					if(j == strW.length()-1){
+						count++;
+					}
+					
+					k++;
+				}
+			}
+		}
+		
+		System.out.println(count);
 	}
 	
 	public static void Ring() {
