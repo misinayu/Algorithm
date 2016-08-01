@@ -40,7 +40,31 @@ public class AlgorithmTest {
 		//SumOfNumbers();
 		//CountingCharacters();
 		//Ring();
-		FindingAWord();
+		//FindingAWord();
+		Shuffle();
+	}
+	
+	public static void Shuffle() {
+		Scanner scanner = new Scanner(System.in);
+		LinkedList<Character> strChar = new LinkedList<Character>();
+		
+		String str = scanner.nextLine();
+		int m = scanner.nextInt();
+		
+		for (int i = 0; i < str.length(); i++) {
+			strChar.add(str.charAt(i));
+		}
+		
+		for (int i = 0; i < m; i++) {
+			int h = scanner.nextInt();
+			for (int j = 0; j < h; j++) {
+				strChar.add(strChar.poll());
+			}
+		}
+		
+		for (Character character : strChar) {
+			System.out.print(character);
+		}
 	}
 	
 	public static void FindingAWord() {
