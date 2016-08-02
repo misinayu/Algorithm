@@ -41,7 +41,39 @@ public class AlgorithmTest {
 		//CountingCharacters();
 		//Ring();
 		//FindingAWord();
-		Shuffle();
+		//Shuffle();
+		CardGame();
+	}
+	
+	public static void CardGame() {
+		Scanner scanner = new Scanner(System.in);
+		int taro = 0;
+		int hanako = 0;
+		
+		int n = scanner.nextInt();
+		for (int i = 0; i < n; i++) {
+			String taroStr = scanner.next();
+			String hanakoStr = scanner.next();
+			scanner.nextLine();
+			
+			for (int k = 0; k < taroStr.length(); k++) {
+				if(hanakoStr.isEmpty()){ break; }
+				if(taroStr.charAt(k) > hanakoStr.charAt(k)){
+					taro += 3;
+					break;
+				}else if(taroStr.charAt(k) == hanakoStr.charAt(k)){
+					if(k == taroStr.length()-1){
+						taro++;
+						hanako++;
+					}
+				}else if(taroStr.charAt(k) < hanakoStr.charAt(k)){
+					hanako += 3;
+					break;
+				}
+			}
+		}
+		
+		System.out.println(taro + " " + hanako);
 	}
 	
 	public static void Shuffle() {
