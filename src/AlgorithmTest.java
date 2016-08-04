@@ -42,7 +42,60 @@ public class AlgorithmTest {
 		//Ring();
 		//FindingAWord();
 		//Shuffle();
-		CardGame();
+		//CardGame();
+		Transformation();
+	}
+	
+	public static void Transformation() {
+		Scanner scanner = new Scanner(System.in);
+		String str = scanner.nextLine();
+		char[] strChar = str.toCharArray();
+		int n = scanner.nextInt();
+		
+		for (int i = 0; i < n; i++) {
+			int a = 0;
+			int b = 0;
+			String order = scanner.next();
+			
+			switch (order) {
+			case "print":
+				a = scanner.nextInt();
+				b = scanner.nextInt();
+				for (int j = a; j <= b; j++) {
+					System.out.print(strChar[j]);
+				}
+				System.out.println();
+				break;
+				
+			case "reverse":
+				a = scanner.nextInt();
+				b = scanner.nextInt();
+				int kijyun = (a+b)/2;
+				while(a <= kijyun){
+					char temp = strChar[a];
+					strChar[a] = strChar[b];
+					strChar[b] = temp;
+					a++;
+					b--;
+				}
+				break;
+				
+			case "replace":
+				a = scanner.nextInt();
+				b = scanner.nextInt();
+				String temp = scanner.nextLine();
+				char[] tempChar = temp.toCharArray();
+				for (int j = a; j <= b; j++) {
+					strChar[a] = tempChar[j];
+					a++;
+				}
+				break;
+				
+			default:
+				System.out.println("入力ミスじゃな！");
+				break;
+			}
+		}
 	}
 	
 	public static void CardGame() {
