@@ -43,7 +43,34 @@ public class AlgorithmTest {
 		//FindingAWord();
 		//Shuffle();
 		//CardGame();
-		Transformation();
+		//Transformation();
+		Distance();
+	}
+	
+	public static void Distance() {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Point> points = new ArrayList<Point>();
+		int x1 = scanner.nextInt();
+		int y1 = scanner.nextInt();
+		points.add(new Point(x1, y1));
+		int x2 = scanner.nextInt();
+		int y2 = scanner.nextInt();
+		points.add(new Point(x2, y2));
+		
+		int x = 0, y = 0;
+		for (Point p : points) {
+			if(((p.x > 0) && (p.y > 0)) ||
+					((p.x < 0) && (p.y < 0))){
+				x -= p.x;
+				y -= p.y;
+			}else{
+				x += p.x;
+				y += p.y;
+			}
+		}
+		
+		double distance = Math.sqrt(Math.pow(Math.abs(x), 2) + Math.pow(Math.abs(y), 2));
+		System.out.println(distance);
 	}
 	
 	public static void Transformation() {
